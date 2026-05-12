@@ -17,5 +17,11 @@
                 "distribution": "store"
             }
         }
+    },
+    "submit": {
+        "production": {
+            "ios": {
+            }
+        }
     }
 }

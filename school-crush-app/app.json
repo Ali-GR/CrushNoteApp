@@ -15,18 +15,25 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.crushnote.app",
-      "googleServicesFile": "./GoogleService-Info.plist"
+      "bundleIdentifier": "com.crushnote.ios",
+      "buildNumber": "1",
+      "googleServicesFile": "./GoogleService-Info.plist",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
-      "package": "com.crushnote.app",
+      "package": "com.crushnote.ios",
       "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/logo.jpeg",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "com.google.android.gms.permission.AD_ID"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"

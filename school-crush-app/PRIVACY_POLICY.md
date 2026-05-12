@@ -7,9 +7,9 @@ Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. In dieser 
 ## 1. Verantwortlicher
 Verantwortlich für die Datenverarbeitung in dieser App ist:
 
-[Rafael Kamberi]  
-[Amannhof, 4]  
-[72108, Rottenburg a.N]  
+Rafael Kamberi  
+Amannhof  
+72108, Rottenburg a.N.
 
 ## 2. Erhebung und Speicherung personenbezogener Daten
 ### a) Registrierung und Profil (Supabase)

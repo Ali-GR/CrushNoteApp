@@ -2,26 +2,25 @@ import React from 'react';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthProvider, useAuth } from '../context/AuthContext';
 import { View, Text, Modal, StyleSheet, TouchableOpacity, Platform } from 'react-native';
 
-import AuthScreen from './screens/AuthScreen';
-import OnboardingScreen from './screens/OnboardingScreen';
-import OnboardingSlidesScreen from './screens/OnboardingSlidesScreen';
-import FeedScreen from './screens/FeedScreen';
-import PostCreateScreen from './screens/PostCreateScreen';
-import CommentsScreen from './screens/CommentsScreen';
-import ReportScreen from './screens/ReportScreen';
-import SplashScreen from './screens/SplashScreen';
-import AdminDashboardScreen from './screens/AdminDashboardScreen';
-import SettingsScreen from './screens/SettingsScreen';
-import PrivacyPolicyScreen from './screens/PrivacyPolicyScreen';
-import BannedScreen from './screens/BannedScreen';
-import PremiumScreen from './screens/PremiumScreen';
-import AGBScreen from './screens/AGBScreen';
-import SupportScreen from './screens/SupportScreen';
+import AuthScreen from './AuthScreen';
+import OnboardingScreen from './OnboardingScreen';
+import OnboardingSlidesScreen from './OnboardingSlidesScreen';
+import FeedScreen from './FeedScreen';
+import PostCreateScreen from './PostCreateScreen';
+import CommentsScreen from './CommentsScreen';
+import ReportScreen from './ReportScreen';
+import SplashScreen from './SplashScreen';
+import AdminDashboardScreen from './AdminDashboardScreen';
+import SettingsScreen from './SettingsScreen';
+import PrivacyPolicyScreen from './PrivacyPolicyScreen';
+import BannedScreen from './BannedScreen';
+import PremiumScreen from './PremiumScreen';
+import AGBScreen from './AGBScreen';
+import SupportScreen from './SupportScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { requestTrackingPermissionsAsync } from 'expo-tracking-transparency';
 
 // Root Param Lists
 export type RootStackParamList = {
@@ -118,9 +117,15 @@ function Navigation() {
     
     // Request Apple Tracking Transparency permission
     const requestTracking = async () => {
-      if (Platform.OS === 'ios') {
+      if (Platform.OS !== 'ios') return;
+
+      try {
+        const { requestTrackingPermissionsAsync } = await import('expo-tracking-transparency');
         const { status } = await requestTrackingPermissionsAsync();
         console.log('Tracking Permission Status:', status);
+      } catch (error) {
+        // Gracefully skip when the native module is not present in the current dev build.
+        console.warn('Tracking transparency module unavailable:', error);
       }
     };
     requestTracking();

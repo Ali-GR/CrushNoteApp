@@ -6,12 +6,12 @@ Willkommen bei **Crush Note**! Diese Allgemeinen Geschäftsbedingungen regeln di
 
 ## 1. Geltungsbereich und Anbieter
 Betreiber der App und dein Vertragspartner ist:
-
+ 
 **Rafael Kamberi**  
-Amannhof, 4  
+Amannhof  
 72108, Rottenburg a.N.  
-E-Mail: [Deine E-Mail-Adresse einfügen]
-
+E-Mail: [Deine E-Mail-Adresse]
+ 
 Diese AGB gelten für alle Nutzer der App weltweit, sofern nicht ausdrücklich etwas anderes vereinbart wurde.
 
 ## 2. Leistungsbeschreibung

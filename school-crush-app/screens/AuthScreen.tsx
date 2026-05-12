@@ -17,13 +17,17 @@ export default function AuthScreen() {
     const [ageConfirmed, setAgeConfirmed] = useState(false);
 
     async function signInWithEmail() {
+        console.log("Attempting sign in for:", email);
         setLoading(true);
         const { error } = await supabase.auth.signInWithPassword({
             email: email.trim(),
             password: password.trim(),
         });
 
-        if (error) Alert.alert('Login fehlgeschlagen', 'E-Mail oder Passwort ist falsch.');
+        if (error) {
+            console.error("Sign in error:", error);
+            Alert.alert('Login fehlgeschlagen', error.message);
+        }
         setLoading(false);
     }
 
@@ -33,14 +37,14 @@ export default function AuthScreen() {
             return;
         }
 
-        setLoading(true);
-
+        console.log("Attempting sign up for:", email);
         const { data: authData, error: signUpError } = await supabase.auth.signUp({
             email: email.trim(),
             password: password.trim(),
         });
 
         if (signUpError) {
+            console.error("Sign up error:", signUpError);
             Alert.alert('Registrierung fehlgeschlagen', signUpError.message);
             setLoading(false);
             return;

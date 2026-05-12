@@ -279,19 +279,19 @@ export default function PremiumScreen({ navigation }: any) {
                                                 {isYearly ? 'Jahres-Abo' : 'Monats-Abo'}
                                             </Text>
                                             <Text style={styles.planSavings}>
-                                                {isYearly ? 'Du sparst 44% vs. Monatsabo 🎉' : 'Jederzeit'}
+                                                {isYearly ? 'Bester Deal 🎉' : 'Jederzeit kündbar'}
                                             </Text>
-                                            {isYearly && (
-                                                <Text style={styles.planTotalSubtext}>
-                                                    Nur 19,99 € im Jahr — jederzeit kündbar
-                                                </Text>
-                                            )}
+                                            <Text style={styles.planTotalSubtext}>
+                                                {pkg.product.priceString} {isYearly ? 'pro Jahr' : 'pro Monat'}
+                                            </Text>
                                         </View>
                                         <View style={styles.planPriceBox}>
                                             <Text style={styles.planPrice}>
-                                                {isYearly ? '1,66€' : '2,99€'}
+                                                {isYearly 
+                                                    ? (pkg.product.price / 12).toLocaleString(undefined, {style:'currency', currency: pkg.product.currencyCode}) 
+                                                    : pkg.product.priceString}
                                             </Text>
-                                            <Text style={styles.planPeriod}>/Monat</Text>
+                                            <Text style={styles.planPeriod}>{isYearly ? '/Monat' : ''}</Text>
                                         </View>
                                     </View>
                                     <View style={[styles.planRadio, isSelected && styles.planRadioActive]}>

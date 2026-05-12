@@ -20,7 +20,7 @@ export default function AGBScreen({ navigation }: any) {
 
                 <Section title="1. Geltungsbereich und Anbieter">
                     <Text style={styles.paragraph}>
-                        Betreiber der App "Crush Note" und dein Vertragspartner ist Rafael Kamberi, Amannhof 4, 72108 Rottenburg a.N. Diese AGB gelten für alle Nutzer der App weltweit.
+                        Betreiber der App "Crush Note" und dein Vertragspartner ist Rafael Kamberi, Amannhof, 72108 Rottenburg a.N. Diese AGB gelten für alle Nutzer der App weltweit.
                     </Text>
                 </Section>
 
